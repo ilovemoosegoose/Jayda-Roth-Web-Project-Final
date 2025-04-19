@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guess the Song Lyric</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: lavenderblush;
+      padding: 30px;
+      text-align: center;
+    }
+    .game-box {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 80%;
+      max-width: 500px;
+      margin: 0 auto;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    input {
+      padding: 10px;
+      width: 60%;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 15px;
+      margin-top: 10px;
+      font-size: 16px;
+      background-color: #4a148c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="game-box">
+    <h2>🎤 Guess the Song Lyric!</h2>
+    <p><em>"Is this the real life? Is this just ______?"</em></p>
+    <input type="text" id="guessInput" placeholder="Enter the missing word">
+    <br>
+    <button onclick="checkGuess()">Submit</button>
+    <div class="result" id="resultMessage"></div>
+  </div>
+
+  <script>
+    function checkGuess() {
+      const correctAnswer = "fantasy";
+      const userInput = document.getElementById("guessInput").value.trim().toLowerCase();
+      const resultMessage = document.getElementById("resultMessage");
+
+      if (userInput === correctAnswer) {
+        resultMessage.textContent = "✅ Correct! Freddie Mercury would be proud.";
+        resultMessage.style.color = "green";
+      } else {
+        resultMessage.textContent = "❌ Nope! Try again.";
+        resultMessage.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
